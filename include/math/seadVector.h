@@ -142,6 +142,14 @@ struct Vector3 : public Policies<T>::Vec3Base
     bool equals(const Vector3& rhs, T epsilon = 0) const;
 
     void add(const Vector3& a);
+
+    inline void add(T _x, T _y, T _z)
+    {
+        this->x += _x;
+        this->y += _y;
+        this->z += _z;
+    }
+
     /// Apply a rotation `m` to this vector.
     void mul(const Mtx33& m);
     /// Apply a transformation `m` (rotation then translation) to this vector.
